@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yusif Huseynov | Data Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#f6f3ef;--surface:#fff;--surface2:#efeae3;--text:#1c1916;--text-muted:#706860;--accent:#2d6a4f;--accent2:#52b788;--accent-light:#d8f3dc;--border:#e2dbd2;--radius:14px;}
+    *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;}
+    .az{display:none;}
+    nav{position:fixed;top:0;left:0;right:0;background:rgba(246,243,239,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:200;height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;}
+    .nav-logo{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--accent);text-decoration:none;}
+    .nav-right{display:flex;align-items:center;gap:4px;}
+    .nav-right a{text-decoration:none;color:var(--text-muted);font-size:0.86rem;font-weight:500;padding:6px 13px;border-radius:20px;transition:all .2s;}
+    .nav-right a:hover{background:var(--accent-light);color:var(--accent);}
+    .lang-toggle{margin-left:10px;border:1.5px solid var(--accent);background:transparent;color:var(--accent);font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;padding:5px 14px;border-radius:20px;cursor:pointer;transition:all .2s;}
+    .lang-toggle:hover{background:var(--accent);color:#fff;}
+    section{padding:100px 48px 80px;max-width:1080px;margin:0 auto;}
+    #home{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:100px;}
+    .hero-tag{display:inline-flex;align-items:center;gap:6px;background:var(--accent-light);color:var(--accent);font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:28px;width:fit-content;}
+    h1{font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,5vw,4.2rem);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px;}
+    h1 em{font-style:italic;color:var(--accent);}
+    .hero-sub{font-size:1.05rem;color:var(--text-muted);max-width:560px;margin-bottom:40px;}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn-primary{background:var(--accent);color:#fff;padding:12px 28px;border-radius:30px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all .2s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;}
+    .btn-primary:hover{background:#1b4d38;transform:translateY(-1px);}
+    .btn-outline{background:transparent;color:var(--accent);padding:12px 28px;border-radius:30px;text-decoration:none;font-weight:600;font-size:0.9rem;border:1.5px solid var(--accent);transition:all .2s;}
+    .btn-outline:hover{background:var(--accent-light);}
+    .hero-stats{display:flex;gap:40px;margin-top:64px;padding-top:40px;border-top:1px solid var(--border);}
+    .stat-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent);line-height:1;}
+    .stat-label{font-size:0.8rem;color:var(--text-muted);margin-top:4px;font-weight:500;}
+    .section-label{font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+    h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);letter-spacing:-0.02em;line-height:1.15;margin-bottom:48px;}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;}
+    .project-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .25s;display:flex;flex-direction:column;}
+    .project-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.09);}
+    .project-icon{width:44px;height:44px;border-radius:10px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:18px;}
+    .project-card h3{font-size:1rem;font-weight:600;margin-bottom:8px;}
+    .project-card p{font-size:0.855rem;color:var(--text-muted);margin-bottom:14px;flex:1;}
+    .tags{display:flex;gap:6px;flex-wrap:wrap;}
+    .tag{background:var(--surface2);color:var(--text-muted);font-size:0.72rem;font-weight:600;padding:3px 10px;border-radius:10px;}
+    .project-link{display:inline-flex;align-items:center;gap:5px;margin-top:14px;font-size:0.82rem;font-weight:600;color:var(--accent);text-decoration:none;}
+    .project-link:hover{text-decoration:underline;}
+    .exp-edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+    .exp-list{display:flex;flex-direction:column;gap:16px;}
+    .exp-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:all .2s;}
+    .exp-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.07);}
+    .exp-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px;}
+    .exp-title{font-size:0.95rem;font-weight:600;}
+    .exp-company{font-size:0.85rem;color:var(--accent);font-weight:500;margin-top:3px;}
+    .exp-date{font-size:0.76rem;color:var(--text-muted);white-space:nowrap;background:var(--surface2);padding:4px 10px;border-radius:10px;flex-shrink:0;}
+    .exp-bullets{padding-left:16px;margin-top:4px;}
+    .exp-bullets li{font-size:0.855rem;color:var(--text-muted);margin-bottom:5px;line-height:1.55;}
+    .cert-list{display:flex;flex-direction:column;gap:14px;}
+    .cert-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 24px;display:flex;align-items:center;gap:18px;transition:all .2s;text-decoration:none;color:var(--text);}
+    .cert-card:hover{transform:translateX(4px);box-shadow:0 4px 20px rgba(0,0,0,0.06);border-color:var(--accent);}
+    .cert-badge{width:42px;height:42px;border-radius:12px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+    .cert-info{flex:1;}
+    .cert-info h3{font-size:0.92rem;font-weight:600;margin-bottom:2px;}
+    .cert-info p{font-size:0.8rem;color:var(--text-muted);}
+    .cert-year{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--border);white-space:nowrap;}
+    .cert-arrow{color:var(--accent);opacity:0;transition:opacity .2s;margin-left:4px;}
+    .cert-card:hover .cert-arrow{opacity:1;}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+    .about-text p{color:var(--text-muted);font-size:0.95rem;margin-bottom:16px;line-height:1.75;}
+    .skills-title{font-weight:600;margin-bottom:14px;font-size:0.95rem;}
+    .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;}
+    .skill-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 14px;font-size:0.84rem;font-weight:500;display:flex;align-items:center;gap:8px;}
+    .skill-dot{width:7px;height:7px;border-radius:50%;background:var(--accent2);flex-shrink:0;}
+    .lang-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+    .lang-pill{background:var(--accent-light);color:var(--accent);font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:12px;}
+    .contact-wrapper{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+    .contact-info h3{font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:24px;}
+    .contact-links{display:flex;flex-direction:column;gap:10px;}
+    .contact-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);font-size:0.88rem;font-weight:500;padding:11px 16px;border-radius:10px;border:1px solid var(--border);transition:all .2s;background:var(--bg);}
+    .contact-link:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light);}
+    .contact-form{display:flex;flex-direction:column;gap:14px;}
+    .form-input{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--text);outline:none;transition:border .2s;width:100%;}
+    .form-input:focus{border-color:var(--accent);}
+    textarea.form-input{resize:vertical;min-height:110px;}
+    .form-success{display:none;color:var(--accent);font-size:0.88rem;font-weight:500;margin-top:4px;}
+    footer{text-align:center;padding:32px 48px;border-top:1px solid var(--border);color:var(--text-muted);font-size:0.82rem;}
+    .section-divider{border:none;border-top:1px solid var(--border);margin:0 48px;}
+    @media(max-width:720px){nav{padding:0 20px;}.nav-right a{display:none;}section{padding:80px 20px 60px;}.about-grid,.contact-wrapper,.exp-edu-grid{grid-template-columns:1fr;}.hero-stats{gap:24px;}.exp-header{flex-direction:column;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="nav-logo">YH.</a>
+  <div class="nav-right">
+    <a href="#home"><span class="en">Home</span><span class="az">Ana Səhifə</span></a>
+    <a href="#projects"><span class="en">Projects</span><span class="az">Layihələr</span></a>
+    <a href="#experience"><span class="en">Experience</span><span class="az">Təcrübə</span></a>
+    <a href="#certificates"><span class="en">Certificates</span><span class="az">Sertifikatlar</span></a>
+    <a href="#about"><span class="en">About Me</span><span class="az">Haqqımda</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="az">Əlaqə</span></a>
+    <button class="lang-toggle" onclick="toggleLang()">AZ</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+  <div class="hero-tag">
+    <span>👋</span>
+    <span class="en">Data Analyst</span><span class="az">Data Analitik</span>
+  </div>
+  <h1>
+    <span class="en">Hi, I'm <em>Yusif</em><br>Huseynov.</span>
+    <span class="az">Salam, mən <em>Yusif</em><br>Hüseynovam.</span>
+  </h1>
+  <p class="hero-sub">
+    <span class="en">Junior Data Analyst with hands-on experience in SQL, Python, Power BI &amp; Excel. I turn raw data into meaningful business insights.</span>
+    <span class="az">Junior Data Analitik — SQL, Python, Power BI və Excel üzrə praktiki təcrübəyə malik. Məlumatları mənalı biznes nəticələrinə çevirirəm.</span>
+  </p>
+  <div class="hero-btns">
+    <a href="https://github.com/yusifhuseynn" target="_blank" class="btn-primary">
+      <span class="en">View My Projects</span><span class="az">Layihələrimə bax</span>
+    </a>
+    <a href="#contact" class="btn-outline">
+      <span class="en">Get in Touch</span><span class="az">Əlaqə saxla</span>
+    </a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">3</div>
+      <div class="stat-label"><span class="en">Work Experiences</span><span class="az">İş Təcrübəsi</span></div>
+    </div>
+    <div>
+      <div class="stat-num">11</div>
+      <div class="stat-label"><span class="en">Projects</span><span class="az">Layihə</span></div>
+    </div>
+    <div>
+      <div class="stat-num">6</div>
+      <div class="stat-label"><span class="en">Certificates</span><span class="az">Sertifikat</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label"><span class="en">MY WORK</span><span class="az">İŞLƏRİM</span></div>
+  <h2><span class="en">Projects</span><span class="az">Layihələr</span></h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-icon">📊</div>
+      <h3>Sales Analytics</h3>
+      <p><span class="en">Interactive Sales Dashboard in Excel using Power Query, PivotTable &amp; Charts — from 9,994 rows of raw data to fully functional business intelligence.</span>
+         <span class="az">Excel-də Power Query, PivotTable və Chartlarla hazırlanmış interaktiv Satış Dashboardu — 9,994 sətir xam məlumatdan tam funksional biznes kəşfiyyatına.</span></p>
+      <div class="tags"><span class="tag">Excel</span><span class="tag">Power Query</span><span class="tag">PivotTable</span></div>
+      <a href="https://github.com/yusifhuseynn/SalesAnalytics" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">👥</div>
+      <h3>HR Dashboard</h3>
+      <p><span class="en">HR analytics dashboard built with Power BI — covering employee turnover, performance KPIs and department-level comparative analyses.</span>
+         <span class="az">Power BI ilə hazırlanmış HR analitika dashboardu — işçi dövriyyəsi, performans KPI-ları və departament üzrə müqayisəli analizlər.</span></p>
+      <div class="tags"><span class="tag">Power BI</span><span class="tag">KPI</span><span class="tag">HR Analytics</span></div>
+      <a href="https://github.com/yusifhuseynn/HR_Analytics" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🔍</div>
+      <h3>HR Analytics EDA</h3>
+      <p><span class="en">Exploratory data analysis of an HR dataset — analyzing employee performance, recruitment sources, satisfaction levels and termination reasons.</span>
+         <span class="az">HR məlumat dəstinin kəşfiyyat analizi — performans, işə qəbul mənbələri, işçi məmnuniyyəti və işdən çıxma səbəblərinin tədqiqi.</span></p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Seaborn</span><span class="tag">Matplotlib</span></div>
+      <a href="https://github.com/yusifhuseynn/hr-analytics-eda" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🏫</div>
+      <h3>Azerbaijan Schools Dashboard</h3>
+      <p><span class="en">Power BI dashboard analyzing computerized schools in Azerbaijan (2016–2024) — 14 regions, city/rural comparison, YoY growth with Python, Power Query &amp; DAX.</span>
+         <span class="az">Azərbaycanda kompüterləşdirilmiş məktəbləri (2016–2024) təhlil edən Power BI dashboardu — 14 rayon, şəhər/kənd müqayisəsi, YoY artım.</span></p>
+      <div class="tags"><span class="tag">Power BI</span><span class="tag">Python</span><span class="tag">DAX</span><span class="tag">Power Query</span></div>
+      <a href="https://github.com/yusifhuseynn/azerbaijan-schools-powerbi-dashboard" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🏅</div>
+      <h3>Baku 2015 European Games</h3>
+      <p><span class="en">Analysis and visualization of Baku 2015 European Games data using Python &amp; Power BI — medal tables and sport-by-sport statistics.</span>
+         <span class="az">Bakı 2015 Avropa Oyunlarının məlumatlarının Python və Power BI ilə analizi — medal cədvəlləri və idman növləri üzrə statistika.</span></p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Data Viz</span></div>
+      <a href="https://github.com/yusifhuseynn/baku-2015-european-games" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">✈️</div>
+      <h3>British Airways — Predictive Modeling</h3>
+      <p><span class="en">British Airways Data Science Virtual Experience on Forage — ML model to predict customer booking behavior using Python, Pandas, NumPy &amp; Scikit-learn.</span>
+         <span class="az">British Airways Data Science Virtual Experience — müştəri sifariş davranışının proqnozlaşdırılması üçün maşın öyrənməsi modeli.</span></p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Pandas</span><span class="tag">Jupyter</span></div>
+      <a href="https://github.com/yusifhuseynn/British-Airways-Predictive_modeling_customer_bookings" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- EXPERIENCE & EDUCATION -->
+<section id="experience">
+  <div class="section-label"><span class="en">MY CAREER</span><span class="az">KARYERAm</span></div>
+  <h2><span class="en">Experience &amp; Education</span><span class="az">Təcrübə &amp; Təhsil</span></h2>
+  <div class="exp-edu-grid">
+
+    <div>
+      <div class="skills-title" style="margin-bottom:20px;">
+        <span class="en">Work Experience</span><span class="az">İş Təcrübəsi</span>
+      </div>
+      <div class="exp-list">
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title"><span class="en">Data Analytics Intern</span><span class="az">Data Analitik Təcrübəçi</span></div>
+              <div class="exp-company">Buta Group</div>
+            </div>
+            <div class="exp-date">Nov 2025 – Feb 2026</div>
+          </div>
+          <ul class="exp-bullets">
+            <li><span class="en">Complex formulas, pivot tables, conditional formatting &amp; macros in Excel</span><span class="az">Excel-də mürəkkəb formulalar, pivot cədvəllər, şərti formatlama, makrolar</span></li>
+            <li><span class="en">Efficient analysis and visualization of large-scale datasets</span><span class="az">İri həcmli məlumat dəstələrinin effektiv analizi və vizuallaşdırılması</span></li>
+            <li><span class="en">Data extraction and analysis from databases</span><span class="az">Verilənlər bazalarından məlumatların çıxarılması və analizi</span></li>
+          </ul>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title"><span class="en">Data Analyst</span><span class="az">Data Analitik</span></div>
+              <div class="exp-company">IndoLike <span style="font-size:0.74rem;opacity:0.6">(remote)</span></div>
+            </div>
+            <div class="exp-date">Aug – Sep 2025</div>
+          </div>
+          <ul class="exp-bullets">
+            <li><span class="en">Interactive dashboards with Power BI — KPI, YoY &amp; regional analyses</span><span class="az">Power BI ilə interaktiv dashboardlar (KPI, YoY, regional analizlər)</span></li>
+            <li><span class="en">Data cleaning &amp; transformation with Python (Pandas, Jupyter)</span><span class="az">Python (Pandas, Jupyter) ilə məlumat təmizlənməsi və transformasiyası</span></li>
+            <li><span class="en">SQL queries for data extraction from relational databases</span><span class="az">SQL ilə relational verilənlər bazasından məlumat çıxarışı</span></li>
+            <li><span class="en">Pivot tables and preliminary data analysis in Excel</span><span class="az">Excel-də pivot cədvəllər və ilkin data analizi</span></li>
+          </ul>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title"><span class="en">Partner Relations &amp; Business Analytics Intern</span><span class="az">Partnyorlarla İş və Biznes Analitikası Təcrübəçisi</span></div>
+              <div class="exp-company">Kapital Bank</div>
+            </div>
+            <div class="exp-date">May – Aug 2025</div>
+          </div>
+          <ul class="exp-bullets">
+            <li><span class="en">Partner management and coordination</span><span class="az">Partnyorların idarə olunması və koordinasiyası</span></li>
+            <li><span class="en">Partner performance analysis and KPI tracking</span><span class="az">Partnyorların performans analizi — KPI-ların izlənməsi</span></li>
+            <li><span class="en">Built Excel-based dashboards improving reporting efficiency</span><span class="az">KPI izləmə məqsədilə Excel əsaslı dashboardlar, hesabat proseslərinin təkmilləşdirilməsi</span></li>
+            <li><span class="en">Optimization of business processes and campaign effectiveness</span><span class="az">Biznes proseslərinin və kampaniya effektivliyinin optimallaşdırılması</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div>
+      <div class="skills-title" style="margin-bottom:20px;">
+        <span class="en">Education</span><span class="az">Təhsil</span>
+      </div>
+      <div class="exp-list">
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Handex</div>
+              <div class="exp-company">Master Data Analytics</div>
+            </div>
+            <div class="exp-date">09/2025 – <span class="en">ongoing</span><span class="az">davam edir</span></div>
+          </div>
+          <ul class="exp-bullets">
+            <li><span class="en">Intensive program covering SQL, Python, Power BI and Data Analysis</span><span class="az">SQL, Python, Power BI, Data Analysis üzrə intensiv proqram</span></li>
+          </ul>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title"><span class="en">Azerbaijan State Oil and Industry University</span><span class="az">Azərbaycan Dövlət Neft və Sənaye Universiteti</span></div>
+              <div class="exp-company"><span class="en">Bachelor — Instrument Engineering</span><span class="az">Bakalavr — Cihaz Mühəndisliyi</span></div>
+            </div>
+            <div class="exp-date">2021 – 2025</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <div class="section-label"><span class="en">ACHIEVEMENTS</span><span class="az">NAİLİYYƏTLƏR</span></div>
+  <h2><span class="en">Certificates</span><span class="az">Sertifikatlar</span></h2>
+  <div class="cert-list">
+
+    <a href="https://drive.google.com/file/d/1YRJ8nMyAWaCaLvIjiG5RoDlWjF5j61SR/view?pli=1" target="_blank" class="cert-card">
+      <div class="cert-badge">🌍</div>
+      <div class="cert-info"><h3>Aspire Leaders Program</h3><p>Aspire Institute</p></div>
+      <div class="cert-year">12/2025</div><span class="cert-arrow">↗</span>
+    </a>
+
+    <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/af2233f8cbb7ffc9f210de4be8ca3f3d063fbb8d" target="_blank" class="cert-card">
+      <div class="cert-badge">📊</div>
+      <div class="cert-info">
+        <h3><span class="en">Data Analysis in Excel</span><span class="az">Excel ilə Məlumat Analizi</span></h3>
+        <p>Datacamp</p>
+      </div>
+      <div class="cert-year">11/2025</div><span class="cert-arrow">↗</span>
+    </a>
+
+    <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIyOTc0IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvOTQ1ODg1OV85MjcwMDE3MTc2MzkzMzQyOTk3My5wbmciLCJ1c2VybmFtZSI6Ill1c2lmIEh1c2V5bm92In0%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion" target="_blank" class="cert-card">
+      <div class="cert-badge">📈</div>
+      <div class="cert-info"><h3>Microsoft Power BI</h3><p>Simplilearn</p></div>
+      <div class="cert-year">11/2025</div><span class="cert-arrow">↗</span>
+    </a>
+
+    <a href="https://gelecegiyazanlar.turkcell.com.tr/sertifika/0fa0e7b6ce4c4728a345f74f9b77d13c" target="_blank" class="cert-card">
+      <div class="cert-badge">🗄️</div>
+      <div class="cert-info"><h3>SQL Database</h3><p>Turkcell</p></div>
+      <div class="cert-year">10/2025</div><span class="cert-arrow">↗</span>
+    </a>
+
+    <a href="https://www.coursera.org/account/accomplishments/specialization/P4FOPL2UHAVU" target="_blank" class="cert-card">
+      <div class="cert-badge">🔍</div>
+      <div class="cert-info"><h3>Google Data Analytics</h3><p>Google / Coursera</p></div>
+      <div class="cert-year">10/2025</div><span class="cert-arrow">↗</span>
+    </a>
+
+    <a href="https://www.theforage.com/completion-certificates/tMjbs76F526fF5v3G/NjynCWzGSaWXQCxSX_tMjbs76F526fF5v3G_ycirtJiiRQkWt6cei_1759015086642_completion_certificate.pdf" target="_blank" class="cert-card">
+      <div class="cert-badge">✈️</div>
+      <div class="cert-info"><h3>British Airways Data Science Job Simulation</h3><p>Forage</p></div>
+      <div class="cert-year">09/2025</div><span class="cert-arrow">↗</span>
+    </a>
+
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label"><span class="en">ABOUT ME</span><span class="az">HAQQIMDA</span></div>
+  <h2><span class="en">About Me</span><span class="az">Mənim Haqqımda</span></h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        <span class="en">As a Junior Data Analyst, I have hands-on experience with SQL, Python, Excel and Power BI. I work in data cleaning, analysis, KPI tracking, dashboard development and business analytics.</span>
+        <span class="az">Junior Data Analitik olaraq SQL, Python, Excel və Power BI alətləri ilə praktiki iş təcrübəsinə malikəm. Məlumatların təmizlənməsi, KPI izləmə, dashboard hazırlanması və biznes analitikası sahələrində çalışıram.</span>
+      </p>
+      <p>
+        <span class="en">Through my experience in banking environments and real projects, I have developed strong analytical thinking and problem-solving skills.</span>
+        <span class="az">Bank mühitində və real layihələr üzərində əldə etdiyim təcrübə sayəsində analitik düşünmə və problem həll etmə bacarıqlarımı inkişaf etdirmişəm.</span>
+      </p>
+    </div>
+    <div>
+      <div class="skills-title"><span class="en">Skills</span><span class="az">Bacarıqlar</span></div>
+      <div class="skills-grid">
+        <div class="skill-item"><span class="skill-dot"></span>SQL</div>
+        <div class="skill-item"><span class="skill-dot"></span>Python</div>
+        <div class="skill-item"><span class="skill-dot"></span>Power BI</div>
+        <div class="skill-item"><span class="skill-dot"></span>Excel</div>
+        <div class="skill-item"><span class="skill-dot"></span>Power Query</div>
+        <div class="skill-item"><span class="skill-dot"></span>Data Cleaning</div>
+        <div class="skill-item"><span class="skill-dot"></span>Data Visualization</div>
+        <div class="skill-item"><span class="skill-dot"></span>EDA</div>
+      </div>
+      <div class="skills-title"><span class="en">Languages</span><span class="az">Dil Bilikləri</span></div>
+      <div class="lang-pills">
+        <span class="lang-pill"><span class="en">Azerbaijani — Native</span><span class="az">Azərbaycan dili — Ana dil</span></span>
+        <span class="lang-pill"><span class="en">English — B1</span><span class="az">İngilis dili — B1</span></span>
+        <span class="lang-pill">Turkish</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label"><span class="en">CONTACT</span><span class="az">ƏLAQƏ</span></div>
+  <h2><span class="en">Get in Touch</span><span class="az">Əlaqə Saxla</span></h2>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <h3><span class="en">Contact Details</span><span class="az">Əlaqə vasitələri</span></h3>
+      <div class="contact-links">
+        <a href="mailto:yusifhuseynov809@gmail.com" class="contact-link">
+          <span>✉️</span><span>yusifhuseynov809@gmail.com</span>
+        </a>
+        <a href="tel:+994514883980" class="contact-link">
+          <span>📞</span><span>+994 51 488 39 80</span>
+        </a>
+        <a href="https://www.linkedin.com/in/yusifhuseynn/" target="_blank" class="contact-link">
+          <span>💼</span><span>linkedin.com/in/yusifhuseynn</span>
+        </a>
+        <a href="https://github.com/yusifhuseynn" target="_blank" class="contact-link">
+          <span>🐙</span><span>github.com/yusifhuseynn</span>
+        </a>
+      </div>
+    </div>
+    <form class="contact-form" action="https://formspree.io/f/xkoqjnpe" method="POST">
+      <input type="text" name="name" class="form-input" placeholder="Your name / Adınız" required/>
+      <input type="email" name="email" class="form-input" placeholder="Email / E-poçt" required/>
+      <textarea name="message" class="form-input" placeholder="Your message / Mesajınız" required></textarea>
+      <button type="submit" class="btn-primary" style="width:fit-content;">
+        <span class="en">Send Message</span><span class="az">Göndər</span>
+      </button>
+      <p class="form-success">
+        <span class="en">Message sent! I'll get back to you soon.</span>
+        <span class="az">Mesajınız göndərildi! Tezliklə cavab verəcəyəm.</span>
+      </p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p><span class="en">© 2025 Yusif Huseynov · Data Analyst</span><span class="az">© 2025 Yusif Hüseynov · Data Analitik</span></p>
+</footer>
+
+<script>
+  let isAZ = false;
+
+  function toggleLang() {
+    isAZ = !isAZ;
+    document.querySelector('.lang-toggle').textContent = isAZ ? 'EN' : 'AZ';
+    document.querySelectorAll('.en').forEach(el => el.style.display = isAZ ? 'none' : 'inline');
+    document.querySelectorAll('.az').forEach(el => el.style.display = isAZ ? 'inline' : 'none');
+  }
+
+  // Formspree AJAX
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const success = form.querySelector('.form-success');
+      btn.style.opacity = '0.7';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.reset();
+          success.style.display = 'block';
+          btn.querySelector('.en') && (btn.querySelector('.en').textContent = 'Sent ✓');
+          btn.querySelector('.az') && (btn.querySelector('.az').textContent = 'Göndərildi ✓');
+        } else {
+          btn.style.opacity = '1';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.style.opacity = '1';
+        btn.disabled = false;
+      }
+    });
+  }
+</script>
+</body>
+</html>
