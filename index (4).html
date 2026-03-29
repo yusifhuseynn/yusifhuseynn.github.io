@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yusif Huseynov | Data Analyst</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M6HZCH5GDT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M6HZCH5GDT');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#f6f3ef;--surface:#fff;--surface2:#efeae3;--text:#1c1916;--text-muted:#706860;--accent:#2d6a4f;--accent2:#52b788;--accent-light:#d8f3dc;--border:#e2dbd2;--radius:14px;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;}
+    nav{position:fixed;top:0;left:0;right:0;background:rgba(246,243,239,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:200;height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;}
+    .nav-logo{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--accent);text-decoration:none;}
+    .nav-right{display:flex;align-items:center;gap:4px;}
+    .nav-right a{text-decoration:none;color:var(--text-muted);font-size:0.86rem;font-weight:500;padding:6px 13px;border-radius:20px;transition:all .2s;}
+    .nav-right a:hover{background:var(--accent-light);color:var(--accent);}
+    .lang-btn{margin-left:10px;border:1.5px solid var(--accent);background:transparent;color:var(--accent);font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;padding:5px 14px;border-radius:20px;cursor:pointer;transition:all .2s;}
+    .lang-btn:hover{background:var(--accent);color:#fff;}
+    section{padding:100px 48px 80px;max-width:1080px;margin:0 auto;}
+    #home{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:100px;}
+    .hero-tag{display:inline-flex;align-items:center;gap:6px;background:var(--accent-light);color:var(--accent);font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:28px;width:fit-content;}
+    h1{font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,5vw,4.2rem);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px;}
+    h1 em{font-style:italic;color:var(--accent);}
+    .hero-sub{font-size:1.05rem;color:var(--text-muted);max-width:560px;margin-bottom:40px;}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn-primary{background:var(--accent);color:#fff;padding:12px 28px;border-radius:30px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all .2s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;}
+    .btn-primary:hover{background:#1b4d38;transform:translateY(-1px);}
+    .btn-outline{background:transparent;color:var(--accent);padding:12px 28px;border-radius:30px;text-decoration:none;font-weight:600;font-size:0.9rem;border:1.5px solid var(--accent);transition:all .2s;}
+    .btn-outline:hover{background:var(--accent-light);}
+    .hero-stats{display:flex;gap:40px;margin-top:64px;padding-top:40px;border-top:1px solid var(--border);}
+    .stat-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent);line-height:1;}
+    .stat-label{font-size:0.8rem;color:var(--text-muted);margin-top:4px;font-weight:500;}
+    .section-label{font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+    h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);letter-spacing:-0.02em;line-height:1.15;margin-bottom:48px;}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;}
+    .project-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .25s;display:flex;flex-direction:column;}
+    .project-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.09);}
+    .project-icon{width:44px;height:44px;border-radius:10px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:18px;}
+    .project-card h3{font-size:1rem;font-weight:600;margin-bottom:8px;}
+    .project-card p{font-size:0.855rem;color:var(--text-muted);margin-bottom:14px;flex:1;}
+    .tags{display:flex;gap:6px;flex-wrap:wrap;}
+    .tag{background:var(--surface2);color:var(--text-muted);font-size:0.72rem;font-weight:600;padding:3px 10px;border-radius:10px;}
+    .project-link{display:inline-flex;align-items:center;gap:5px;margin-top:14px;font-size:0.82rem;font-weight:600;color:var(--accent);text-decoration:none;}
+    .project-link:hover{text-decoration:underline;}
+    .exp-edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+    .exp-list{display:flex;flex-direction:column;gap:16px;}
+    .exp-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:all .2s;}
+    .exp-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.07);}
+    .exp-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px;}
+    .exp-title{font-size:0.95rem;font-weight:600;}
+    .exp-company{font-size:0.85rem;color:var(--accent);font-weight:500;margin-top:3px;}
+    .exp-date{font-size:0.76rem;color:var(--text-muted);white-space:nowrap;background:var(--surface2);padding:4px 10px;border-radius:10px;flex-shrink:0;}
+    .exp-bullets{padding-left:16px;margin-top:4px;}
+    .exp-bullets li{font-size:0.855rem;color:var(--text-muted);margin-bottom:5px;line-height:1.55;}
+    .cert-list{display:flex;flex-direction:column;gap:14px;}
+    .cert-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 24px;display:flex;align-items:center;gap:18px;transition:all .2s;text-decoration:none;color:var(--text);}
+    .cert-card:hover{transform:translateX(4px);box-shadow:0 4px 20px rgba(0,0,0,0.06);border-color:var(--accent);}
+    .cert-badge{width:42px;height:42px;border-radius:12px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+    .cert-info{flex:1;}
+    .cert-info h3{font-size:0.92rem;font-weight:600;margin-bottom:2px;}
+    .cert-info p{font-size:0.8rem;color:var(--text-muted);}
+    .cert-year{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--border);white-space:nowrap;}
+    .cert-arrow{color:var(--accent);opacity:0;transition:opacity .2s;margin-left:4px;}
+    .cert-card:hover .cert-arrow{opacity:1;}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+    .about-text p{color:var(--text-muted);font-size:0.95rem;margin-bottom:16px;line-height:1.75;}
+    .skills-title{font-weight:600;margin-bottom:14px;font-size:0.95rem;}
+    .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;}
+    .skill-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 14px;font-size:0.84rem;font-weight:500;display:flex;align-items:center;gap:8px;}
+    .skill-dot{width:7px;height:7px;border-radius:50%;background:var(--accent2);flex-shrink:0;}
+    .lang-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+    .lang-pill{background:var(--accent-light);color:var(--accent);font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:12px;}
+    .contact-wrapper{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+    .contact-info h3{font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:24px;}
+    .contact-links{display:flex;flex-direction:column;gap:10px;}
+    .contact-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);font-size:0.88rem;font-weight:500;padding:11px 16px;border-radius:10px;border:1px solid var(--border);transition:all .2s;background:var(--bg);}
+    .contact-link:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light);}
+    .contact-form{display:flex;flex-direction:column;gap:14px;}
+    .form-input{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--text);outline:none;transition:border .2s;width:100%;}
+    .form-input:focus{border-color:var(--accent);}
+    textarea.form-input{resize:vertical;min-height:110px;}
+    .form-success{display:none;color:var(--accent);font-size:0.88rem;font-weight:500;margin-top:4px;}
+    footer{text-align:center;padding:32px 48px;border-top:1px solid var(--border);color:var(--text-muted);font-size:0.82rem;}
+    .section-divider{border:none;border-top:1px solid var(--border);margin:0 48px;}
+    @media(max-width:720px){nav{padding:0 20px;}.nav-right a{display:none;}section{padding:80px 20px 60px;}.about-grid,.contact-wrapper,.exp-edu-grid{grid-template-columns:1fr;}.hero-stats{gap:24px;}.exp-header{flex-direction:column;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="nav-logo">YH.</a>
+  <div class="nav-right">
+    <a href="#home"         id="nav-home">Home</a>
+    <a href="#projects"     id="nav-projects">Projects</a>
+    <a href="#experience"   id="nav-experience">Experience</a>
+    <a href="#certificates" id="nav-certificates">Certificates</a>
+    <a href="#about"        id="nav-about">About Me</a>
+    <a href="#contact"      id="nav-contact">Contact</a>
+    <button class="lang-btn" id="langBtn">AZ</button>
+  </div>
+</nav>
+
+<section id="home">
+  <div class="hero-tag"><span>👋</span> <span id="t-tag">Data Analyst</span></div>
+  <h1 id="t-h1">Hi, I'm <em>Yusif</em><br>Huseynov.</h1>
+  <p class="hero-sub" id="t-sub">Junior Data Analyst with hands-on experience in SQL, Python, Power BI &amp; Excel. I turn raw data into meaningful business insights.</p>
+  <div class="hero-btns">
+    <a href="https://github.com/yusifhuseynn" target="_blank" class="btn-primary" id="t-btn1">View My Projects</a>
+    <a href="#contact" class="btn-outline" id="t-btn2">Get in Touch</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-num">3</div><div class="stat-label" id="t-stat1">Work Experiences</div></div>
+    <div><div class="stat-num">13</div><div class="stat-label" id="t-stat2">Projects</div></div>
+    <div><div class="stat-num">6</div><div class="stat-label" id="t-stat3">Certificates</div></div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<section id="projects">
+  <div class="section-label" id="t-proj-label">MY WORK</div>
+  <h2 id="t-proj-h2">Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-icon" style="background:#695df1;color:#fff;font-family:DM Serif Display,serif;font-size:1.4rem;font-weight:700;">D</div>
+      <h3>DataTestLab — Data Analytics Assessment Platform</h3>
+      <p id="t-p-dtl">Developed a data-driven assessment platform with 2000+ questions across SQL, Excel, Python, and Power BI. Implemented dynamic testing logic, automated scoring system, and structured evaluation of user performance. Focused on analyzing user interaction and performance data to continuously improve testing quality and user experience.</p>
+      <div class="tags"><span class="tag">Data Analysis</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Excel</span><span class="tag">Power BI</span><span class="tag">JavaScript</span><span class="tag">Analytics</span><span class="tag">Product Analytics</span></div>
+      <a href="https://datatestlab.vercel.app" target="_blank" class="project-link">Website →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🤖</div>
+      <h3>Job Data Analytics Bot</h3>
+      <p id="t-p-bot">Developed an automated system for collecting and analyzing job listing data across multiple platforms. The system extracts, cleans, and filters Data Analytics-related vacancies and delivers structured insights via Telegram and email. Designed as an end-to-end data pipeline to improve job search efficiency.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Web Scraping</span><span class="tag">Data Cleaning</span><span class="tag">Data Analysis</span><span class="tag">Automation</span><span class="tag">APIs</span><span class="tag">GitHub Actions</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">📊</div>
+      <h3>Sales Analytics</h3>
+      <p id="t-p1">Interactive Sales Dashboard in Excel using Power Query, PivotTable &amp; Charts — from 9,994 rows of raw data to fully functional business intelligence.</p>
+      <div class="tags"><span class="tag">Excel</span><span class="tag">Power Query</span><span class="tag">PivotTable</span></div>
+      <a href="https://github.com/yusifhuseynn/SalesAnalytics" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">👥</div>
+      <h3>HR Dashboard</h3>
+      <p id="t-p2">HR analytics dashboard built with Power BI — covering employee turnover, performance KPIs and department-level comparative analyses.</p>
+      <div class="tags"><span class="tag">Power BI</span><span class="tag">KPI</span><span class="tag">HR Analytics</span></div>
+      <a href="https://github.com/yusifhuseynn/HR_Analytics" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🔍</div>
+      <h3>HR Analytics EDA</h3>
+      <p id="t-p3">Exploratory data analysis of an HR dataset — analyzing employee performance, recruitment sources, satisfaction levels and termination reasons.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Seaborn</span><span class="tag">Matplotlib</span></div>
+      <a href="https://github.com/yusifhuseynn/hr-analytics-eda" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🏫</div>
+      <h3>Azerbaijan Schools Dashboard</h3>
+      <p id="t-p4">Power BI dashboard analyzing computerized schools in Azerbaijan (2016–2024) — 14 regions, city/rural comparison, YoY growth with Python, Power Query &amp; DAX.</p>
+      <div class="tags"><span class="tag">Power BI</span><span class="tag">Python</span><span class="tag">DAX</span><span class="tag">Power Query</span></div>
+      <a href="https://github.com/yusifhuseynn/azerbaijan-schools-powerbi-dashboard" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🏅</div>
+      <h3>Baku 2015 European Games</h3>
+      <p id="t-p5">Analysis and visualization of Baku 2015 European Games data using Python &amp; Power BI — medal tables and sport-by-sport statistics.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Data Viz</span></div>
+      <a href="https://github.com/yusifhuseynn/baku-2015-european-games" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">✈️</div>
+      <h3>British Airways — Predictive Modeling</h3>
+      <p id="t-p6">British Airways Data Science Virtual Experience — ML model to predict customer booking behavior using Python, Pandas, NumPy &amp; Scikit-learn.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Pandas</span><span class="tag">Jupyter</span></div>
+      <a href="https://github.com/yusifhuseynn/British-Airways-Predictive_modeling_customer_bookings" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<section id="experience">
+  <div class="section-label" id="t-exp-label">MY CAREER</div>
+  <h2 id="t-exp-h2">Experience &amp; Education</h2>
+  <div class="exp-edu-grid">
+    <div>
+      <div class="skills-title" style="margin-bottom:20px;" id="t-work-title">Work Experience</div>
+      <div class="exp-list">
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title" id="t-job1-title">Data Analytics Intern</div>
+              <div class="exp-company">Buta Group</div>
+            </div>
+            <div class="exp-date">Nov 2025 – Feb 2026</div>
+          </div>
+          <ul class="exp-bullets">
+            <li id="t-job1-li1">Complex formulas, pivot tables, conditional formatting &amp; macros in Excel</li>
+            <li id="t-job1-li2">Efficient analysis and visualization of large-scale datasets</li>
+            <li id="t-job1-li3">Data extraction and analysis from databases</li>
+          </ul>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title" id="t-job2-title">Data Analyst</div>
+              <div class="exp-company">IndoLike <span style="font-size:0.74rem;opacity:0.6">(remote)</span></div>
+            </div>
+            <div class="exp-date">Aug – Sep 2025</div>
+          </div>
+          <ul class="exp-bullets">
+            <li id="t-job2-li1">Interactive dashboards with Power BI — KPI, YoY &amp; regional analyses</li>
+            <li id="t-job2-li2">Data cleaning &amp; transformation with Python (Pandas, Jupyter)</li>
+            <li id="t-job2-li3">SQL queries for data extraction from relational databases</li>
+            <li id="t-job2-li4">Pivot tables and preliminary data analysis in Excel</li>
+          </ul>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title" id="t-job3-title">Partner Relations &amp; Business Analytics Intern</div>
+              <div class="exp-company">Kapital Bank</div>
+            </div>
+            <div class="exp-date">May – Aug 2025</div>
+          </div>
+          <ul class="exp-bullets">
+            <li id="t-job3-li1">Partner management and coordination</li>
+            <li id="t-job3-li2">Partner performance analysis and KPI tracking</li>
+            <li id="t-job3-li3">Built Excel-based dashboards improving reporting efficiency</li>
+            <li id="t-job3-li4">Optimization of business processes and campaign effectiveness</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div>
+      <div class="skills-title" style="margin-bottom:20px;" id="t-edu-title">Education</div>
+      <div class="exp-list">
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Handex</div>
+              <div class="exp-company">Master Data Analytics</div>
+            </div>
+            <div class="exp-date">09/2025 – <span id="t-ongoing">ongoing</span></div>
+          </div>
+          <ul class="exp-bullets">
+            <li id="t-handex-li">Intensive program covering SQL, Python, Power BI and Data Analysis</li>
+          </ul>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title" id="t-adnsu-title">Azerbaijan State Oil and Industry University</div>
+              <div class="exp-company" id="t-adnsu-sub">Bachelor — Instrument Engineering</div>
+            </div>
+            <div class="exp-date">2021 – 2025</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<section id="certificates">
+  <div class="section-label" id="t-cert-label">ACHIEVEMENTS</div>
+  <h2 id="t-cert-h2">Certificates</h2>
+  <div class="cert-list">
+
+    <a class="cert-card" style="cursor:default;">
+      <div class="cert-badge" style="background:transparent;padding:0;overflow:hidden;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAKHmlDQ1BJQ0MgUHJvZmlsZQAAeJy1Vnk8lGsbft73nX2xzZDd2LdGljDIvpPITpsxMxjLYMyg0iapcCJJthI5FTp0WpDTIi3ajtKmos7IEarT0SKVyvcOf+j7fefP812/3/O813v97vt+7ud+/3gvAMhjAAWMrhSBSBjs7caIjIpm4B8DBKgBRaAHtNicjDTwv4Dm6ceHc2/3mNLd+JPjs9Z3YS3Zbl/+vLHVjvoPuT9CjsvL4KDlPFC+NhY9HOVdKKfHhga7o/w+AAQKN4XLBYAoQfUd8bMxpARpTPwPMcniFD6q50j1FB47A+UlKNeLTUoTofyUVBfO5V6b5T/kingctB5pENUpmWIeehZJOpftWSJpLll6fzonTSjleSi35SSw0RjyWZQvnOt/FloZ0gH6errbWNjZ2DAtmRaM2GQ2J4mRwWEnS6v+25B+qzmmdxAAWbS3ttscsTBzTsNINywgAVlABypAE+gCI8AElsAWOAAX4An8QCAIBVFgNeCABJAChCAL5IAtIB8UghKwF1SBWtAAGkELOAHawVlwEVwFN8Ed8AAMAAkYAa/ABPgIpiEIwkNUiAapQFqQPmQKWUIsyAnyhJZCwVAUFAPFQwJIDOVAW6FCqBSqguqgRuhX6Ax0EboO9UGPoSFoHHoHfYERmALTYQ3YAF4Es2BX2B8OhVfB8XA6vA7Og3fBFXA9fAxugy/CN+EHsAR+BU8iACEjSog2wkRYiDsSiEQjcYgQ2YgUIOVIPdKCdCI9yD1EgrxGPmNwGBqGgWFiHDA+mDAMB5OO2YgpwlRhjmLaMJcx9zBDmAnMdywVq441xdpjfbGR2HhsFjYfW449jD2NvYJ9gB3BfsThcEo4Q5wtzgcXhUvErccV4fbjWnFduD7cMG4Sj8er4E3xjvhAPBsvwufjK/HH8Bfwd/Ej+E8EMkGLYEnwIkQTBIRcQjmhiXCecJcwSpgmyhH1ifbEQCKXuJZYTGwgdhJvE0eI0yR5kiHJkRRKSiRtIVWQWkhXSIOk92QyWYdsR15O5pM3kyvIx8nXyEPkzxQFignFnbKSIqbsohyhdFEeU95TqVQDqgs1miqi7qI2Ui9Rn1E/ydBkzGR8Zbgym2SqZdpk7sq8kSXK6su6yq6WXSdbLntS9rbsazminIGcuxxbbqNctdwZuX65SXmavIV8oHyKfJF8k/x1+TEFvIKBgqcCVyFP4ZDCJYVhGkLTpbnTOLSttAbaFdoIHUc3pPvSE+mF9F/ovfQJRQXFxYrhitmK1YrnFCVKiJKBkq9SslKx0gmlh0pfFmgscF3AW7BzQcuCuwumlNWUXZR5ygXKrcoPlL+oMFQ8VZJUdqu0qzxVxaiaqC5XzVI9oHpF9bUaXc1BjaNWoHZC7Yk6rG6iHqy+Xv2Q+i31SQ1NDW+NNI1KjUsarzWVNF00EzXLNM9rjmvRtJy0+FplWhe0XjIUGa6MZEYF4zJjQltd20dbrF2n3as9rWOoE6aTq9Oq81SXpMvSjdMt0+3WndDT0gvQy9Fr1nuiT9Rn6Sfo79Pv0Z8yMDSIMNhu0G4wZqhs6Gu4zrDZcNCIauRslG5Ub3TfGGfMMk4y3m98xwQ2sTZJMKk2uW0Km9qY8k33m/YtxC60WyhYWL+wn0lhujIzmc3MITMls6VmuWbtZm8W6S2KXrR7Uc+i7+bW5snmDeYDFgoWfha5Fp0W7yxNLDmW1Zb3rahWXlabrDqs3i42XcxbfGDxI2uadYD1dutu6282tjZCmxabcVs92xjbGtt+Fp0VxCpiXbPD2rnZbbI7a/fZ3sZeZH/C/m8HpkOSQ5PD2BLDJbwlDUuGHXUc2Y51jhInhlOM00EnibO2M9u53vm5i64L1+Wwy6irsWui6zHXN27mbkK3025T7vbuG9y7PBAPb48Cj15PBc8wzyrPZ146XvFezV4T3tbe6727fLA+/j67ffp9NXw5vo2+E362fhv8LvtT/EP8q/yfLzVZKlzaGQAH+AXsCRhcpr9MsKw9EAT6Bu4JfBpkGJQe9Nty3PKg5dXLXwRbBOcE94TQQtaENIV8DHULLQ4dCDMKE4d1h8uGrwxvDJ+K8IgojZBELorcEHkzSjWKH9URjY8Ojz4cPbnCc8XeFSMrrVfmr3y4ynBV9qrrq1VXJ68+t0Z2DXvNyRhsTERMU8xXdiC7nj0Z6xtbEzvBcefs47ziunDLuOM8R14pbzTOMa40bizeMX5P/HiCc0J5wmu+O7+K/zbRJ7E2cSopMOlI0kxyRHJrCiElJuWMQEGQJLicqpmandqXZpqWnyZJt0/fmz4h9BcezoAyVmV0iOjoD+aW2Ei8TTyU6ZRZnfkpKzzrZLZ8tiD71lqTtTvXjq7zWvfzesx6zvruHO2cLTlDG1w31G2ENsZu7N6kuylv08hm781Ht5C2JG35Pdc8tzT3w9aIrZ15Gnmb84a3eW9rzpfJF+b3b3fYXrsDs4O/o3en1c7Knd8LuAU3Cs0Lywu/FnGKbvxk8VPFTzO74nb1FtsUHyjBlQhKHu523n20VL50XenwnoA9bWWMsoKyD3vX7L1evri8dh9pn3ifpGJpRUelXmVJ5deqhKoH1W7VrTXqNTtrpvZz99894HKgpVajtrD2y0H+wUd13nVt9Qb15YdwhzIPvWgIb+j5mfVz42HVw4WHvx0RHJEcDT56udG2sbFJvam4GW4WN48fW3nszi8ev3S0MFvqWpVaC4+D4+LjL3+N+fXhCf8T3SdZJ1tO6Z+qOU07XdAGta1tm2hPaJd0RHX0nfE7093p0Hn6N7PfjpzVPlt9TvFc8XnS+bzzMxfWXZjsSut6fTH+4nD3mu6BS5GX7l9efrn3iv+Va1e9rl7qce25cM3x2tnr9tfP3GDdaL9pc7PtlvWt079b/36616a37bbt7Y47dnc6+5b0nb/rfPfiPY97V+/73r/5YNmDvodhDx/1r+yXPOI+Gnuc/Pjtk8wn0wObB7GDBU/lnpY/U39W/4fxH60SG8m5IY+hW89Dng8Mc4Zf/Znx59eRvBfUF+WjWqONY5ZjZ8e9xu+8XPFy5FXaq+nX+X/J/1XzxujNqb9d/r41ETkx8lb4duZd0XuV90c+LP7QPRk0+exjysfpqYJPKp+OfmZ97vkS8WV0Ousr/mvFN+Nvnd/9vw/OpMzM/OBNzFBbwpj3JR68OLY4WcSQGhb31ORUsZARksbm8BhMhtTE/N98SmwlAO3bAFB+Mq+hCJp7zPm2WUDgnwHP5yFK6LJCpYZ5LbUeANYkqpdk8ONnNffgUMYPc2AG8+J4Qp4AvWo4n5fFF8Sj9xdw+SJ+qoDBFzD+a0z/yuV/wHyf855ZxMsWzfaZmrZWyI9PEDF8BSKeUMCWdsROnv06QmmPGalCEV+cspBhaW5uB0BGnJXlbCmIgnpn7B8zM+8NAMCXAfCteGZmum5m5hs6C2QAgC7xfwAKP9n2U7+jGwAABXVJREFUeJzlmEtoE1EXx39zJ5kkJo0VG0UFG4MuilWMD1AUl+4ErQvRpWSThbu6FupOcCMKgrjSjRvFlUsh6sJKFartooIBRUqktiTkMc7rfIvvmyHNwxobQ+X7w5Dc17n/ued/zp17tXQ6LWxgiAiapgVlNYgJ14NmsjAAwq0TrvcF/jrhVrS+QK8YOOH1QET+LcKapq1N2NfcerXXC34lmzUJ+4PXq71e8KvF+ackAf8y4WY3DFKvvSIg3KzRtfTajxfq1Ybf/48k0WsAdiLXqw2//0A03M8Ms+GCTtM0QqEQSrVT69tO188VtCyLpaUlGo1Gm93f2ul+B47jYNs2lmUFdb0GlVIKy7IYHR3l6tWrHDlyBNM021a6K2GlFLquB4+maR3rPM8jFovx8uVLbty4QaVSIRwOEwqFAlu+m3VdB1j1v7ndsizGxsaYmprizJkz1Gq1NsIhOkApRb1exzTNoC6RSGBZVrCKSik2b96Mpmk4jkOxWKRUKqHrOuVyGcuySCaTKKXwPI+VlRVCoRCJRIKlpSV0XSeZTAL/lUGlUsE0TRzHwXEcGo0GSqk2T7URVkpRrVbJZrNcvHiR7du38/HjRx4+fMiBAwc4f/48sViMQqHA48ePcV2XoaEhZmZm+PLlC57nceXKFUZHR7l37x7Ly8sMDw9z7do1Pn/+zJMnT5iammJxcZFHjx7hui5jY2NcuHCBZ8+eYZrmqqBri490Oi3+k8lkZNu2bTIxMSGmaYqISKlUEhGR79+/i4iIbduysrIiIiJPnz6VLVu2yOnTp0VE5M2bN2IYhszOzoqIyPHjx2VkZESOHTsmIiLT09OyZ88eERFZWFiQHTt2yNatWyWfz4uIyPXr1+Xs2bMiInLz5k0ZHh6WvXv3SjPHNg2LCJOTk0QiESYmJshkMty6dYtUKsWnT584fPgw+/fvp1AocO7cObLZLJVKBdd1KZfLKKUol8s4joPneYHOHcehXC4DYNs25XIZTdPQNA3LslbJ4FdY1eoH0M6dO1leXub9+/dEo1GeP3+OiDA9Pc3Xr19pNBoUCgVEhJGREVzXDQLRl1UoFELTNHRdD8p+e3MQK6W65t5OmabjCnueh4hgGAa6rhOJRIIJwuFw8KtpWtdt1/O8YCVt2w5W20ckEqHRaFCpVIL+3UiuSbiZdKey7w2/zi+LCI7j8O7dO5RS5PN59u3bRz6fRynF/Pw8pVKJ+fl5xsfHuXz5MocOHSKXy6GU4sOHD4TD4YB8pw2pY1rbtGkT8Xg8eAHfdZFIJOhjGEaQl/3VNwyDRCLB3bt3OXjwILlcjlwuB8CrV6+4c+cO8XicyclJHjx4wO3btwN79+/f58WLF1y6dCnwYEfvNd/8+B2OHj2Kruu8ffsWx3FIJpNks1kWFxdZWFgAYPfu3WQyGWZnZ6lWq5w4cYIfP34wNzcX2Dl16hS7du3i27dvvH79Gtd1iUajVKtVUqkUJ0+eZGhoiLm5OWZmZjAMg1Qqxfj4OMVikWKxGBAPjmqdrqrq9ToiQjweR9M0XNelXq8TCoWIRqNomsbPnz+xLItYLIZSilqttqpdRKhWqziOE2wYvlZ1Xce2bWq1WhAr8XgcEcG2bUzTxDAMIpFIm/a1dDotbfdX/4tc13WDOl3XAy039/G129ruj/HJN9sCAhn5nm0d1xwfzQoI+YOb0TzYR+uErX1a27vVNU/erb1bfd++1gaJvhP+2/cXfSf8N0/cbSeOXibrB7E/OYiq1opWtN5X+OV+uP5P7u06XqR0M+x/XfUbvdgMtuZugwZ5Cfg76Bh0nRL2RkFHwp2O1+tFvzw1sI2jX176/yW8FqENJ4lBZRO1kTLA73D5D2o1BImEYmlTAAAAAElFTkSuQmCC" style="width:42px;height:42px;border-radius:12px;object-fit:cover;" /></div>
+      <div class="cert-info"><h3>Python Programming for Data Science</h3><p>Miuul</p></div>
+      <div class="cert-year">03/2026</div>
+    </a>
+
+    <a class="cert-card" style="cursor:default;">
+      <div class="cert-badge" style="background:transparent;padding:0;overflow:hidden;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAACvElEQVR4nO2YzWsTQRyGn5lNNt00tQ1WsB94kuqlQhAslkoFLXoRQbwLHrzroQc968GDCgVBEPFfKWrBTxB70UO9aCUYITVt2m4yMx42u+1Kk2y0W4nsCwthZrPz7My7v3l3Rd/gIUMXSf5rgE6VAMetBDhuJcBxKwGOWwlw3EpFPVEIgZRb96e1xpitGGJZVvDbGIPWGgQgRbQBDKDbx5pIwEIIarUa62vVoC3jOGQydgBdLpeDAWUqRS7Xi9lUiA0FQnhAO14cMAaTsaBHNj8vKrAPOzR0kFOTE2ilkZbkzbv3LC19Jp1OI6Tk8qWL9GYdAJaLRZ7PL5Aay1M/tg/cxmzvJAPYEvmpglj8CXZr6LbAUkrWq1WOF8Z5+vhh0H599hYP7i+SzuexbZsnj+bo68sBsPD6FVMnzpI9d5Tq7XFY2wSrCXHdQC5DZu4jmZcfMD0WqObE0TwsBLVaHaUUruti2zau63pL3VB5ZYVsY4ZXV9cQCG9m110o15oDK+P1bajmq9AxMJ41LMsKDiHCV/fbga2HU+DB+EczWSJ0863UdWXtj4G11lD3bKKU2k2mlopsCV/+st+cvcG1q1cCexwY3I/WOlSr41DHwL53R0eGGR0ZDvXtxUx3nYc7nmF/Z/vydZlSqdSwhOTI2OHQ9hyXOp5hf9nv3L1HoTDJyenzTM9c4HvpR+z+hb+whJQSUqlQ/d0L/b8eNsYENVcpFYqWQKgea60bf8Lbeltkg6DfRPtiFg3YGNLpNJZl4TheXrBtOzTIQH9/YI1crheD8ZKXY8OAaZ0lHBt6rLbREkC0+xi4PV5OTU4Em8Pb3+LlzJnTZLMOAsG3YpFn8y9IjeVRuxwv2wJvh24V4CuVyp4E+EjAPnTXvCL5EK223h37/IduF9V1ZS0BjlsJcNxKgONWAhy3EuC49Qu2yx/dgCDOegAAAABJRU5ErkJggg==" style="width:42px;height:42px;border-radius:12px;object-fit:cover;" /></div>
+      <div class="cert-info"><h3>SQL (Advanced)</h3><p>HackerRank</p></div>
+      <div class="cert-year">03/2026</div>
+    </a>
+
+    <a href="https://learning.miuul.com/certificates/vnwunfk9tq" target="_blank" class="cert-card">
+      <div class="cert-badge" style="background:transparent;padding:0;overflow:hidden;"><img src="data:image/png;base64,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" style="width:42px;height:42px;border-radius:12px;object-fit:cover;"/></div>
+      <div class="cert-info"><h3>Python Programming for Data Science</h3><p>Miuul</p></div>
+      <div class="cert-year">03/2026</div><span class="cert-arrow">↗</span>
+    </a>
+
+    <a href="https://www.hackerrank.com/certificates/2441bcfb7e8e" target="_blank" class="cert-card">
+      <div class="cert-badge" style="background:transparent;padding:0;overflow:hidden;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAACvElEQVR4nO2YzWsTQRyGn5lNNt00tQ1WsB94kuqlQhAslkoFLXoRQbwLHrzroQc968GDCgVBEPFfKWrBTxB70UO9aCUYITVt2m4yMx42u+1Kk2y0W4nsCwthZrPz7My7v3l3Rd/gIUMXSf5rgE6VAMetBDhuJcBxKwGOWwlw3EpFPVEIgZRb96e1xpitGGJZVvDbGIPWGgQgRbQBDKDbx5pIwEIIarUa62vVoC3jOGQydgBdLpeDAWUqRS7Xi9lUiA0FQnhAO14cMAaTsaBHNj8vKrAPOzR0kFOTE2ilkZbkzbv3LC19Jp1OI6Tk8qWL9GYdAJaLRZ7PL5Aay1M/tg/cxmzvJAPYEvmpglj8CXZr6LbAUkrWq1WOF8Z5+vhh0H599hYP7i+SzuexbZsnj+bo68sBsPD6FVMnzpI9d5Tq7XFY2wSrCXHdQC5DZu4jmZcfMD0WqObE0TwsBLVaHaUUruti2zau63pL3VB5ZYVsY4ZXV9cQCG9m110o15oDK+P1bajmq9AxMJ41LMsKDiHCV/fbga2HU+DB+EczWSJ0863UdWXtj4G11lD3bKKU2k2mlopsCV/+st+cvcG1q1cCexwY3I/WOlSr41DHwL53R0eGGR0ZDvXtxUx3nYc7nmF/Z/vydZlSqdSwhOTI2OHQ9hyXOp5hf9nv3L1HoTDJyenzTM9c4HvpR+z+hb+whJQSUqlQ/d0L/b8eNsYENVcpFYqWQKgea60bf8Lbeltkg6DfRPtiFg3YGNLpNJZl4TheXrBtOzTIQH9/YI1crheD8ZKXY8OAaZ0lHBt6rLbREkC0+xi4PV5OTU4Em8Pb3+LlzJnTZLMOAsG3YpFn8y9IjeVRuxwv2wJvh24V4CuVyp4E+EjAPnTXvCL5EK223h37/IduF9V1ZS0BjlsJcNxKgONWAhy3EuC49Qu2yx/dgCDOegAAAABJRU5ErkJggg==" style="width:42px;height:42px;border-radius:12px;object-fit:cover;"/></div>
+      <div class="cert-info"><h3>SQL (Advanced)</h3><p>HackerRank</p></div>
+      <div class="cert-year">03/2026</div><span class="cert-arrow">↗</span>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1YRJ8nMyAWaCaLvIjiG5RoDlWjF5j61SR/view?pli=1" target="_blank" class="cert-card">
+      <div class="cert-badge" style="background:transparent;padding:0;overflow:hidden;"><img src="data:image/png;base64,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" style="width:42px;height:42px;border-radius:12px;object-fit:cover;" /></div>
+      <div class="cert-info"><h3>Aspire Leaders Program</h3><p>Aspire Institute</p></div>
+      <div class="cert-year">12/2025</div><span class="cert-arrow">↗</span>
+    </a>
+
+    <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/af2233f8cbb7ffc9f210de4be8ca3f3d063fbb8d" target="_blank" class="cert-card">
+      <div class="cert-badge" style="background:transparent;padding:0;overflow:hidden;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAEk0lEQVR4nO2YS2yUVRiGn++c88+0lNJS2lKuEgRR1BgXLEx0xUIXBhI0XnChGFAjQmLUEJeaoIkuSLxsTEw0IQQ1YqILExYGoq5kgw0gFUUaLqUt9DpDp/Of87k4U/CemelMGyJvcjKbycmT77zn+97zixnaolxHMrMNUKluANdbN4DrrcqBFfAaf2dBlQErkBGYn4CTCD7DKh9YgazBnJnA7r+IGU5hQXKt4jMkV9a/FDQR7MVJzGPH8Sfz2DuaMNuX4B/tJGQsMpqCSN1vRXnbqyJZg/ySJ/ROIJ1Z/LE8YcfP2IeP4Q4NIa0ObRBI6+vvyixhDQhIk8E91QWtCf7gELr5BO7ZHtyvE9CeoLZ+/q7wABUCqIXwxkrk89uxGxZAIZB+3AcbunGv/4bNe2h1dal0dY5T0OGUdF0zft9azAdrsOuaCecn8bt7kfuP4j4biB2lxtDVXxErSM6jeU/6SAfhyzuxr63ArMwSThfQl05hzk/+M3TQuGYUGMBIXEMp3gnprhXI+2swjQbNGCiE2DmuggJe0bkWbXZVQdemCVlBPGiuiLYlcdcATLEqkCraIEhbgvtmGHfwMrQkqFCRbWrXNSWC/62teUUN0J7gegvY7T3w5E/oxm6SrSewkxopyoQub3BUCk4EUAVtdti+AubNXvTDC/gzE0iDwTzQRtjUSXAlj8t/bVpPYC0tAyYx2E/74e1efHcOVDF3z0V2LME/1IlmBcZ8RdvXDngqUyRy9YjlhR7CD2PouMesaECe7iJsXYxvdzDi4YpGG804sFfUCdKUIP2jqAdSxX87gplnMdu60J3LSG+bg46myFAaQSuEnT6wLxl1vsMOFrG7TxM+6kNtBLbrW+GV5aT3taIFjwwWkSpBpw/sFW12mCseu/ci+t450qM5SASZ55AM6J7VpLc0RlAjMUNPU9UBC0iLw303grx1hnB4BM0HzK1zsOvnkx4YQEXQyYCM+1jR6bNWCWwEPJiXT+G/vkQYSJF2h3uiE7/rJnxRkU/645AQUFPhZKgZsACeOMFygXRfP5IR7INt6IvLSO9tIQi4I2N/nnA1VnnAIjAR0NWNmFUNhOP5a/10UwfBEm9+k712oYTY3mqci8sEBlIldGRg/1qkO4fe00LalUGGUySU+unUiC0FeCnGiymXizHoTKM7TKn8LCFAIeAXZfEb2wlNJoJMZQhKsE4g79F8gOdOkuztQxoM2mxjtcNMAZegpagwnEY//7FiBmQiEG5uQF5djmkyhCM5wvM92MeOkXw/irQm0373SV0+t85zmBM5zDtn0S8G8ZdTTJvDbOpAdy7Fry1NvGLlNqkPsFe00SBZgzs8DHvOEg4NoxMBszyLbFlE2LaYsDCJpzXrwBC9qqVpmCr2wAC8ew5/dBwAs2YO8swi/OMLY14uU/X77GGIL5GxFC0E0s0LCV+V3n1LM3ChgFyYjFmkAtWvwn+VV7SUM+yP46Dg72pGR4pIBQS1D/D/ptK7j8Ei6apGEEEuTcb0VoFmDhhiz3aCFEqxdMbzcLUSqk5v/4Mv8LOsG8D11nUH/DvQw+rb3nCO2AAAAABJRU5ErkJggg==" style="width:42px;height:42px;border-radius:12px;object-fit:cover;" /></div>
+      <div class="cert-info"><h3 id="t-cert1">Data Analysis in Excel</h3><p>Datacamp</p></div>
+      <div class="cert-year">11/2025</div><span class="cert-arrow">↗</span>
+    </a>
+
+    <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIyOTc0IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvOTQ1ODg1OV85MjcwMDE3MTc2MzkzMzQyOTk3My5wbmciLCJ1c2VybmFtZSI6Ill1c2lmIEh1c2V5bm92In0%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion" target="_blank" class="cert-card">
+      <div class="cert-badge" style="background:transparent;padding:0;overflow:hidden;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAEoklEQVR4nO2Y228VRRyAv5nZ29kWqL2mnAIhKLS0IrWhYkCN8hf46AMkxkcN4cU344sxGk188d0/gEejCfpATFBoCrGVoFhJaUGobcHT27nsdcaHPZRTCgRSTlRyvuRk98zsznz7m9/Ozq5of+Vdw/8I+W8LPC4N4XrTEK43DeF60xCuNw3hetMQrjdPn7B43AaFuXuOeNyzH6H9h1UaINKPPggCqCQWiREIASZJQOsNKq5lnY0AVDVKjtTkm8sIkUVOCoOS1W31mDvlljRUEsWx/qvsbClTKSfkdvdid+czcSnvRlyIuz9q9wEh1/5/mLAAYi1ZiWyKsYWjNK/1zLMQ2BRjm1JsUai4lGOLxdAh0YLl0KYY2RQji2JoM9RVoNWLSJMU1daB2tyCCcqYOMaEIWCy/STBhAHoFBMGmCgEY7JjoyirM+tfhqy1soIOP+BY/xSulXL6WhepEXxw8FdavAhHasZvtzDQtkQlUXx1cRfv7JvEUZpNTszno3spBA6xllRiG6FTdFDB2bELb+8+dHGZ0oURvOd6sbduw8QhwcRv5PpfwGhNuljAau9EKAsdVCiN/gTarLmRViOspGExdDi6d4otbsSn5wZYCBwO98xzuOcWp6a6+Xoyz4mhCb4430eh4nJ86A/2dy5wcmIH317N8/7wZbQRtOdC3tzzJ2GksdvaaBp6icrYKKrlGfzBA4TTk1QujSFsB3/wAHZ3nuDSOLpYxOnZTvHMaaTr4fX2o8MgS6d7hVMj2OLGnJzYznJk8+Ghi+SbK6xENlcWNnFhto2JwmbOXO9ierGZszMdtHohY3OtnLvZzjeTeYyBTj+gGFvMlHxEGqNa28G2cXY+i0lS9MoyuX0v4g8OI70cwrKIZ24Q/XUTMETXponnZ4lmrqOaN4NZe9OuChsDltSsRDafjPRTii2O9k+RGkGrF+HbCb6V0u4HSKVpcSMMMNCxxJEds7zVO40lDYXApcsPeGPbLNry0MUVTBQRXvmd0sgZkltz5PqeZ+WH70kKtxGui3Q8hGWBUsicj7AspOshlFqXx6s5LAWUY8X+zkVODF9moezx2Wgfh/K3ub7cRKIllUQxMtOOozRzZY/x+VZe3nqLY/1T2Erz8dkBhrv/Jkwku7uKxLNF1MwcxvNpPvw6Jo4oj52nPH6eTa8eASC+eQMTxwil0KUS8dwMwrZJFhcwYZhdSI20qP0uIYAwzYIepRJHZcNhELgqxRgIU4VvpZQTRYcf8tGhX3j71EGkAM9KCVNFX+sSx4cmeO+7QZpcTRonNdMVkGqEUpgkybaAUFY2YxiNsGxIU4wx64RXI5yJgWtlkjkrRVcvQ2DQ1YeBbydoI3CURgjD5cJmtrgxShiMEFmd1DTbCSgLRIxw3DXDispyULjuaqAwBqREiGoaSJVNxQ9KidpcBkhr5pKahy3aiGoKGZZCmy9/3oOjNKkRCFMtj2x+vNGBEhpT2+iDOrtvmckieA9io5+qhFjfrzaCMJX4Vnq/PjfEhldr9wuSFIYmO3nislDH5eWd1HnSPH3r4f8aDeF60xCuNw3hetMQrjcN4XrTEK43/wBPoBPkJdBpvgAAAABJRU5ErkJggg==" style="width:42px;height:42px;border-radius:12px;object-fit:cover;" /></div>
+      <div class="cert-info"><h3>Microsoft Power BI</h3><p>Simplilearn</p></div>
+      <div class="cert-year">11/2025</div><span class="cert-arrow">↗</span>
+    </a>
+
+    <a href="https://gelecegiyazanlar.turkcell.com.tr/sertifika/0fa0e7b6ce4c4728a345f74f9b77d13c" target="_blank" class="cert-card">
+      <div class="cert-badge">🗄️</div>
+      <div class="cert-info"><h3>SQL Database</h3><p>Turkcell</p></div>
+      <div class="cert-year">10/2025</div><span class="cert-arrow">↗</span>
+    </a>
+
+    <a href="https://www.coursera.org/account/accomplishments/specialization/P4FOPL2UHAVU" target="_blank" class="cert-card">
+      <div class="cert-badge" style="background:transparent;padding:0;overflow:hidden;"><img src="data:image/png;base64,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" style="width:42px;height:42px;border-radius:12px;object-fit:cover;" /></div>
+      <div class="cert-info"><h3>Google Data Analytics</h3><p>Google / Coursera</p></div>
+      <div class="cert-year">10/2025</div><span class="cert-arrow">↗</span>
+    </a>
+
+    <a href="https://www.theforage.com/completion-certificates/tMjbs76F526fF5v3G/NjynCWzGSaWXQCxSX_tMjbs76F526fF5v3G_ycirtJiiRQkWt6cei_1759015086642_completion_certificate.pdf" target="_blank" class="cert-card">
+      <div class="cert-badge" style="background:transparent;padding:0;overflow:hidden;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAKwElEQVR4nNWZe3AV9RXHP7/f7r03j5sXMRgIhIe8AoqAUOQhPgERUKzoqKjxNaN08MHYEVFqtTralpFR1KkVrYrWYkFbrZZRUZERFKIWUEEhAjGBEPLOTe5rd3+//nHvTW6Se5OboZ1pz8zO7Oz+9uz3d/Y8vuessJWjSVG07lgqhEh6rafryfQm0pfoeZkq2P8VMU9WQTLr9WbVZGuFEKABrUF212Em+wSJrsdL7L7WGqVjz3W/H70DgCFF0o10e5+Igo7fCH22cPzLNEor3IbZ5XrPYiunT9bvKgkBJ7WujgsqNG7DRXVdM5/tPYoUEikFUgq0BqVUx0ukJOxYlAztx6ji/mitkFL2+hUTYWoHnMquNSr6cGT93vJj3PDIP/jxWDMuE1pDNlbQwjBMsjJdKKUxDEFLWxiPx2BV6QxWDhuAoxWa5FmlJxGWY+uUAUeVOkrjMSXH6poJWorC/CwcpahraGPn/qP85aPv2LH7GNmZbhp8Ic6bNIjVy2YzYmA+P1bVUnhKNmkeN1qrHtNZQsB9zcMacEmoPNFCTZOf5tYwLS1+hCEZOiCbCSOKAHjqjR3c//w2bl80kSfumItlhXn4pW388e9fc8Ml43li2cWEHQdDJgbcNfBjG2u3cC/7AgRKKdymwdObvuCxV3fgOJqQ5aCVAgSmKRhdXMDTy+cweUwRH+w8yJypIznwUx2lj73DNwdryM/JoKk1wLqVC7jq/NMJ2zZSio74ED3DSQ2wjgSSy5RU1jYx7bZX0E4EPOhoCgLTkFTVtzJ2aAFb115PVqaHz7+rpPSRd6hvDpDrdeMoTTBsc2q+lx3P3US6x8TRGqEjRkGoHqFIISK5scdDgpDgaIfsDA8jBuZiOxohQGkNWiCkoKElSEFOGveXTiMr08OWLw9w1YMbaW4NkZPpImwppBCEw4phA3JxuwyUBilExLJxYJNhSbk0CwG2AzmZ6az+xQWRDSiN5Wia/AHqGgNMHFXIpscWc8WscWzYsodrH34H7QgyPAa2o5FSELYdsrwufrv0fEwjUWrrOfjNVMhLTAwhCYZtpowdzIrrpvPrFz+luCCXMcMGsWT2OC6fVQJEgqWyppU008C2FdqQaMAUgvq2IOvuvYQxxf0JOTZm13wc9eVIeCcwXLwP98qqlECjEQi0tjlQ0chpxf1Ic0XS+bY9h6mu8zH1jEEM7d+Pbw8d55qH/kZNvZ9sr4fqRh83zzudp5cvJGQ7mEZqKa0T1+gr4OgZGo3LMPhwVznvfl7O9m+qOFzdSNhSnJKdxqobZ3LLgrPYW36MKx94k9qWIKOH9mPz6mvxprsj8ZViDk5KL7XWPR4xsAiN0hEuUd3gY+3GXVTX+sjyuOmfnY5lKZY/+QEvvvcl40cM5KFbZ6EdzbPLZ5PrTW+vcp319mCoeLftM4GPph8hNY6KkJ8Hnt/C2k1l9M/2thcDpSBs22xeczUTRgxgxzeVzBg/JCn56Y24x+SkCLwUElspVt4wk0mjCmnxBzGliHAIGWFmv3zmY1r8YWaMH4LlnBxTSxlwp08Xly9jediblsaTd16E221gq0h+1lrjMlwcrW2m1R/AdhR9xZrIZVICHEvaicSQgpBtM3HUYH5Veg6NvgBul4mUkmA4zJq7LqKoIA8VR3RSeUd8segz4N7ENCRh2+a2RZNZdO4oKo43U1nrY9niKVwydQwhy8KQ/5n2sb1wdGVHSnUuKLJLf9WdXYFC8+Sdc8jO8NAvJ4MHSmdhOwopzOj6zjp7yhCJ2Bsk4MNaa0xpdFOgtINSIlo5E79I64iLSBGxpu3E+T0dhkkEqENJHGtLwOC6tEgCUOw/Uo0vYCOEBK2xlaJkcD+yMjNRWicNHiGi/ELboGU71022wSRa4tbHn0evxOfhWL2fffdrlH1fzal5GYCgNRjizUcXc/a4wQTDEf5qGBErdqIBWiOkiDa8GqV05yoV3YBSEUoqhYgaQLQ3yTrOIImCtLOFIyWIoOVw2cyRrLljLiFbYRqarHQPllKkuV0A2EqB1hiGjNpBIzDQaCxH4TYMkKBQ7fzLUdGOxYi4nKMVLmmgUVi2xm1KYnkgZNmYZi9zidipoxS53jTyczK6LNeU7a9EGpKzRg1AKUl9s4+wLXAZgiNH6xlZnE9ulpfD1Y1UHG9gUslA2vxhDGnQP9cL2mbXvioMUzD+tP4cPNpAQW46+dmZHK1rpryqnpGD8hl4Sg5hx45w5aQWjoJK95js3H+M1a9tp6k1yIVThjBx9AAWr3qLqhM+0DC00MumR6/kk3/9xD1rP6KowEtVjY9XVi2kvPoAD76wlaJ8L3lek0PVbay4bjrXzh7HopUbOF4XIC3NwDQkdc1tvPX4YraUHeK+5z+lKDeDmuZW7i89h5vmTewGOuFcwpSS2kY/n31XRV1zgDOG57PiuY9AC3atuxnHUVx67wZ+8/J2LpxcTEOLnxdWzmP66UPY+2MNK//wMetXLWD+9NF8uKuchSveJCvTw6Prt6GQ7HzhRkCy+IFNTBhZSEG2lwvWvMHa5XP4+azRbN55gFt/9z5Txw6iZEgBVhzoBHMJgS9gMW/qcJ65Z370muKhl7fz0qqF5GSmAXB/6UweX7+dM0fkUzK0gDlTRgGw49sqzhxRyPzpYwiELWb/bCTnTSjiRKOfsh/que/as/GmpwNwz9Vns+avZXzyVQWmlLy1dT8vvrubHK+HwQVe9h2uYeyQAqCj4pmdIjF6Kg2J7SiU0gRtC5dhkJnh4evvjzNtbDEAZd/XkJebQUaaG60lIcfGY5gUnZJFxfEmAsEQ6WkegiGLIzU++mV5GJDvYevuCuZOjWzuw68qyMvyUHRqNjYOj946k9OKCjjR5GPPwRrOnTgERztx6TGJSzS0BPAFwtH2OxLV914zhaVrPqC6vo2gbfHi27t59/fXUHmigTqfH5chcZRiwYxRPLWxjAvu+jOXnlfCF3uO8MOP1TiOYtllk5h9zxs0toawLM3Wr47w+kOXMXXsYKaMPJUbHnmPJRefyZYvD1FT18rWZ4dHOnbRbsvubb5Es+7tPRTkeVg0ayy2VggELsPg/bJy/vTP3biE4JYFEzl/0nDK9lWwa38NSy+fhK0FphTUNrWyZsMu9lfUsmTuGTS1BJlcUkRVdR0Pr9/J1HGDaW4OcPsVE5g1figajc8f5OmNX1K27yjDivK468opFBfm4qjOpKkbgY8vzZbjdEr2sfwZk7Bt4TZd0bU2UsroOkEiXrV51wGWPPI2M0qKMExJ5YkWxg4p4Jnlc8nK8CC7UIJEZD9hx+EojYBuhMd2OuYGMkqIlFIo3Xn2q3VER3xZdRmS+fe+zsVThnHzgrOwbBuEZM7dr3Ld3PHcfdU02kLh9tbfkAKZgOElHGjHcHa9Z4jYpKdjmC2EwEiwPlK5OzYghcTvtzlW58cwBG7TxcHKRtr8NgMLvBEwMsY/evjfkdpsLSopzr+6itIaU0r2HjjO0ic2E7AdPIZJc1uA0ovPZMX104iO53qVXsetyf7wJBq69DaIMaWB1g77K+oIWDbDCvPol5WBrZzegcb48Mn+9uqLKK2RQmCIDt8MO3afupE+AoauRDz5YpJ+4ticWaSip4uYqXzO9ntxPtzr3ycto6i76+rgv6kNUjo9/99yiZN1n2Tyf/cn9N80O2opCUlfowAAAABJRU5ErkJggg==" style="width:42px;height:42px;border-radius:12px;object-fit:cover;" /></div>
+      <div class="cert-info"><h3>British Airways Data Science Job Simulation</h3><p>Forage</p></div>
+      <div class="cert-year">09/2025</div><span class="cert-arrow">↗</span>
+    </a>
+
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<section id="about">
+  <div class="section-label" id="t-about-label">ABOUT ME</div>
+  <h2 id="t-about-h2">About Me</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p id="t-about-p1">As a Junior Data Analyst, I have hands-on experience with SQL, Python, Excel and Power BI. I work in data cleaning, analysis, KPI tracking, dashboard development and business analytics.</p>
+      <p id="t-about-p2">Through my experience in banking environments and real projects, I have developed strong analytical thinking and problem-solving skills.</p>
+    </div>
+    <div>
+      <div class="skills-title" id="t-skills-title">Skills</div>
+      <div class="skills-grid">
+        <div class="skill-item"><span class="skill-dot"></span>SQL</div>
+        <div class="skill-item"><span class="skill-dot"></span>Python</div>
+        <div class="skill-item"><span class="skill-dot"></span>Power BI</div>
+        <div class="skill-item"><span class="skill-dot"></span>Excel</div>
+        <div class="skill-item"><span class="skill-dot"></span>Power Query</div>
+        <div class="skill-item"><span class="skill-dot"></span>Data Cleaning</div>
+        <div class="skill-item"><span class="skill-dot"></span>Data Visualization</div>
+        <div class="skill-item"><span class="skill-dot"></span>EDA</div>
+      </div>
+      <div class="skills-title" id="t-lang-title">Languages</div>
+      <div class="lang-pills">
+        <span class="lang-pill" id="t-lang1">Azerbaijani — Native</span>
+        <span class="lang-pill" id="t-lang2">English — B1</span>
+        <span class="lang-pill">Turkish</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<section id="contact">
+  <div class="section-label" id="t-contact-label">CONTACT</div>
+  <h2 id="t-contact-h2">Get in Touch</h2>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <h3 id="t-contact-title">Contact Details</h3>
+      <div class="contact-links">
+        <a href="mailto:yusifhuseynov809@gmail.com" class="contact-link">
+          <span>✉️</span><span>yusifhuseynov809@gmail.com</span>
+        </a>
+        <a href="tel:+994514883980" class="contact-link">
+          <span>📞</span><span>+994 51 488 39 80</span>
+        </a>
+        <a href="https://www.linkedin.com/in/yusifhuseynn/" target="_blank" class="contact-link">
+          <span>💼</span><span>linkedin.com/in/yusifhuseynn</span>
+        </a>
+        <a href="https://github.com/yusifhuseynn" target="_blank" class="contact-link">
+          <span>🐙</span><span>github.com/yusifhuseynn</span>
+        </a>
+      </div>
+    </div>
+    <form class="contact-form" action="https://formspree.io/f/xkoqjnpe" method="POST">
+      <input type="text" name="name" class="form-input" id="t-ph-name" placeholder="Your name" required/>
+      <input type="email" name="email" class="form-input" placeholder="Email" required/>
+      <textarea name="message" class="form-input" id="t-ph-msg" placeholder="Your message" required></textarea>
+      <button type="submit" class="btn-primary" style="width:fit-content;" id="t-send-btn">Send Message</button>
+      <p class="form-success" id="t-success">Message sent! I will get back to you soon.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p id="t-footer">© 2026 Yusif Huseynov · Data Analyst</p>
+</footer>
+
+<script>
+var isAZ = false;
+
+var translations = {
+  en: {
+    "nav-home": "Home", "nav-projects": "Projects", "nav-experience": "Experience",
+    "nav-certificates": "Certificates", "nav-about": "About Me", "nav-contact": "Contact",
+    "t-tag": "Data Analyst",
+    "t-h1": "Hi, I'm <em>Yusif</em><br>Huseynov.",
+    "t-sub": "Junior Data Analyst with hands-on experience in SQL, Python, Power BI & Excel. I turn raw data into meaningful business insights.",
+    "t-btn1": "View My Projects", "t-btn2": "Get in Touch",
+    "t-stat1": "Work Experiences", "t-stat2": "Projects", "t-stat3": "Certificates",
+    "t-proj-label": "MY WORK", "t-proj-h2": "Projects",
+    "t-p-dtl": "Developed a data-driven assessment platform with 2000+ questions across SQL, Excel, Python, and Power BI. Implemented dynamic testing logic, automated scoring system, and structured evaluation of user performance. Focused on analyzing user interaction and performance data to continuously improve testing quality and user experience.",
+    "t-p-bot": "Developed an automated system for collecting and analyzing job listing data across multiple platforms. The system extracts, cleans, and filters Data Analytics-related vacancies and delivers structured insights via Telegram and email. Designed as an end-to-end data pipeline to improve job search efficiency.",
+    "t-p1": "Interactive Sales Dashboard in Excel using Power Query, PivotTable & Charts — from 9,994 rows of raw data to fully functional business intelligence.",
+    "t-p2": "HR analytics dashboard built with Power BI — covering employee turnover, performance KPIs and department-level comparative analyses.",
+    "t-p3": "Exploratory data analysis of an HR dataset — analyzing employee performance, recruitment sources, satisfaction levels and termination reasons.",
+    "t-p4": "Power BI dashboard analyzing computerized schools in Azerbaijan (2016–2024) — 14 regions, city/rural comparison, YoY growth with Python, Power Query & DAX.",
+    "t-p5": "Analysis and visualization of Baku 2015 European Games data using Python & Power BI — medal tables and sport-by-sport statistics.",
+    "t-p6": "British Airways Data Science Virtual Experience — ML model to predict customer booking behavior using Python, Pandas, NumPy & Scikit-learn.",
+    "t-exp-label": "MY CAREER", "t-exp-h2": "Experience & Education",
+    "t-work-title": "Work Experience", "t-edu-title": "Education",
+    "t-job1-title": "Data Analytics Intern",
+    "t-job1-li1": "Complex formulas, pivot tables, conditional formatting & macros in Excel",
+    "t-job1-li2": "Efficient analysis and visualization of large-scale datasets",
+    "t-job1-li3": "Data extraction and analysis from databases",
+    "t-job2-title": "Data Analyst",
+    "t-job2-li1": "Interactive dashboards with Power BI — KPI, YoY & regional analyses",
+    "t-job2-li2": "Data cleaning & transformation with Python (Pandas, Jupyter)",
+    "t-job2-li3": "SQL queries for data extraction from relational databases",
+    "t-job2-li4": "Pivot tables and preliminary data analysis in Excel",
+    "t-job3-title": "Partner Relations & Business Analytics Intern",
+    "t-job3-li1": "Partner management and coordination",
+    "t-job3-li2": "Partner performance analysis and KPI tracking",
+    "t-job3-li3": "Built Excel-based dashboards improving reporting efficiency",
+    "t-job3-li4": "Optimization of business processes and campaign effectiveness",
+    "t-ongoing": "ongoing",
+    "t-handex-li": "Intensive program covering SQL, Python, Power BI and Data Analysis",
+    "t-adnsu-title": "Azerbaijan State Oil and Industry University",
+    "t-adnsu-sub": "Bachelor — Instrument Engineering",
+    "t-cert-label": "ACHIEVEMENTS", "t-cert-h2": "Certificates",
+    "t-cert1": "Data Analysis in Excel",
+    "t-about-label": "ABOUT ME", "t-about-h2": "About Me",
+    "t-about-p1": "As a Junior Data Analyst, I have hands-on experience with SQL, Python, Excel and Power BI. I work in data cleaning, analysis, KPI tracking, dashboard development and business analytics.",
+    "t-about-p2": "Through my experience in banking environments and real projects, I have developed strong analytical thinking and problem-solving skills.",
+    "t-skills-title": "Skills", "t-lang-title": "Languages",
+    "t-lang1": "Azerbaijani — Native", "t-lang2": "English — B1",
+    "t-contact-label": "CONTACT", "t-contact-h2": "Get in Touch",
+    "t-contact-title": "Contact Details",
+    "t-send-btn": "Send Message",
+    "t-success": "Message sent! I will get back to you soon.",
+    "t-footer": "© 2026 Yusif Huseynov · Data Analyst"
+  },
+  az: {
+    "nav-home": "Ana Səhifə", "nav-projects": "Layihələr", "nav-experience": "Təcrübə",
+    "nav-certificates": "Sertifikatlar", "nav-about": "Haqqımda", "nav-contact": "Əlaqə",
+    "t-tag": "Data Analitik",
+    "t-h1": "Salam, mən <em>Yusif</em><br>Hüseynovam.",
+    "t-sub": "Junior Data Analitik — SQL, Python, Power BI və Excel üzrə praktiki təcrübəyə malik. Məlumatları mənalı biznes nəticələrinə çevirirəm.",
+    "t-btn1": "Layihələrimə bax", "t-btn2": "Əlaqə saxla",
+    "t-stat1": "İş Təcrübəsi", "t-stat2": "Layihə", "t-stat3": "Sertifikat",
+    "t-proj-label": "İŞLƏRİM", "t-proj-h2": "Layihələr",
+    "t-p-dtl": "SQL, Excel, Python və Power BI üzrə 2000+ sualdan ibarət data yönümlü test platforması hazırlamışam. Dinamik test sistemi, avtomatik qiymətləndirmə və istifadəçi performansının analizi implement olunub. Platforma istifadəçi davranışlarını analiz edərək test keyfiyyətinin artırılmasına fokuslanır.",
+    "t-p-bot": "Bir neçə platformadan vakansiya datalarını avtomatik toplayan və analiz edən sistem hazırlamışam. Sistem datanı çıxarır, təmizləyir və Data Analytics sahəsinə uyğun vakansiyaları filtr edir, nəticələri Telegram və email vasitəsilə təqdim edir. Bu layihə end-to-end data pipeline kimi qurulub və iş axtarış prosesini optimallaşdırır.",
+    "t-p1": "Excel-də Power Query, PivotTable və Chartlarla hazırlanmış interaktiv Satış Dashboardu — 9,994 sətir xam məlumatdan tam funksional biznes kəşfiyyatına.",
+    "t-p2": "Power BI ilə hazırlanmış HR analitika dashboardu — işçi dövriyyəsi, performans KPI-ları və departament üzrə müqayisəli analizlər.",
+    "t-p3": "HR məlumat dəstinin kəşfiyyat analizi — performans, işə qəbul mənbələri, işçi məmnuniyyəti və işdən çıxma səbəblərinin tədqiqi.",
+    "t-p4": "Azərbaycanda kompüterləşdirilmiş məktəbləri (2016–2024) təhlil edən Power BI dashboardu — 14 rayon, şəhər/kənd müqayisəsi, YoY artım.",
+    "t-p5": "Bakı 2015 Avropa Oyunlarının məlumatlarının Python və Power BI ilə analizi — medal cədvəlləri və idman növləri üzrə statistika.",
+    "t-p6": "British Airways Data Science Virtual Experience — müştəri sifariş davranışının proqnozlaşdırılması üçün maşın öyrənməsi modeli.",
+    "t-exp-label": "KARYERAm", "t-exp-h2": "Təcrübə & Təhsil",
+    "t-work-title": "İş Təcrübəsi", "t-edu-title": "Təhsil",
+    "t-job1-title": "Data Analitik Təcrübəçi",
+    "t-job1-li1": "Excel-də mürəkkəb formulalar, pivot cədvəllər, şərti formatlama, makrolar",
+    "t-job1-li2": "İri həcmli məlumat dəstələrinin effektiv analizi və vizuallaşdırılması",
+    "t-job1-li3": "Verilənlər bazalarından məlumatların çıxarılması və analizi",
+    "t-job2-title": "Data Analitik",
+    "t-job2-li1": "Power BI ilə interaktiv dashboardlar (KPI, YoY, regional analizlər)",
+    "t-job2-li2": "Python (Pandas, Jupyter) ilə məlumat təmizlənməsi və transformasiyası",
+    "t-job2-li3": "SQL ilə relational verilənlər bazasından məlumat çıxarışı",
+    "t-job2-li4": "Excel-də pivot cədvəllər və ilkin data analizi",
+    "t-job3-title": "Partnyorlarla İş və Biznes Analitikası Təcrübəçisi",
+    "t-job3-li1": "Partnyorların idarə olunması və koordinasiyası",
+    "t-job3-li2": "Partnyorların performans analizi — KPI-ların izlənməsi",
+    "t-job3-li3": "KPI izləmə məqsədilə Excel əsaslı dashboardlar, hesabat proseslərinin təkmilləşdirilməsi",
+    "t-job3-li4": "Biznes proseslərinin və kampaniya effektivliyinin optimallaşdırılması",
+    "t-ongoing": "davam edir",
+    "t-handex-li": "SQL, Python, Power BI, Data Analysis üzrə intensiv proqram",
+    "t-adnsu-title": "Azərbaycan Dövlət Neft və Sənaye Universiteti",
+    "t-adnsu-sub": "Bakalavr — Cihaz Mühəndisliyi",
+    "t-cert-label": "NAİLİYYƏTLƏR", "t-cert-h2": "Sertifikatlar",
+    "t-cert1": "Excel ilə Məlumat Analizi",
+    "t-about-label": "HAQQIMDA", "t-about-h2": "Mənim Haqqımda",
+    "t-about-p1": "Junior Data Analitik olaraq SQL, Python, Excel və Power BI alətləri ilə praktiki iş təcrübəsinə malikəm. Məlumatların təmizlənməsi, KPI izləmə, dashboard hazırlanması və biznes analitikası sahələrində çalışıram.",
+    "t-about-p2": "Bank mühitində və real layihələr üzərində əldə etdiyim təcrübə sayəsində analitik düşünmə və problem həll etmə bacarıqlarımı inkişaf etdirmişəm.",
+    "t-skills-title": "Bacarıqlar", "t-lang-title": "Dil Bilikləri",
+    "t-lang1": "Azərbaycan dili — Ana dil", "t-lang2": "İngilis dili — B1",
+    "t-contact-label": "ƏLAQƏ", "t-contact-h2": "Əlaqə Saxla",
+    "t-contact-title": "Əlaqə vasitələri",
+    "t-send-btn": "Göndər",
+    "t-success": "Mesajınız göndərildi! Tezliklə cavab verəcəyəm.",
+    "t-footer": "© 2026 Yusif Hüseynov · Data Analitik"
+  }
+};
+
+function toggleLang() {
+  isAZ = !isAZ;
+  var lang = isAZ ? 'az' : 'en';
+  document.getElementById('langBtn').textContent = isAZ ? 'EN' : 'AZ';
+  var t = translations[lang];
+  var ids = Object.keys(t);
+  for (var i = 0; i < ids.length; i++) {
+    var el = document.getElementById(ids[i]);
+    if (el) {
+      el.innerHTML = t[ids[i]];
+    }
+  }
+  var nameEl = document.getElementById('t-ph-name');
+  var msgEl = document.getElementById('t-ph-msg');
+  if (nameEl) nameEl.placeholder = isAZ ? 'Ad\u0131n\u0131z' : 'Your name';
+  if (msgEl) msgEl.placeholder = isAZ ? 'Mesaj\u0131n\u0131z' : 'Your message';
+}
+
+document.getElementById('langBtn').addEventListener('click', toggleLang);
+
+var form = document.querySelector('.contact-form');
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('t-send-btn');
+    var success = document.querySelector('.form-success');
+    btn.style.opacity = '0.7';
+    btn.disabled = true;
+    try {
+      var res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        success.style.display = 'block';
+        btn.textContent = isAZ ? 'Göndərildi ✓' : 'Sent ✓';
+        setTimeout(()=>{success.style.display='none';btn.textContent=isAZ?'Göndər':'Send Messa
